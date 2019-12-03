@@ -8,24 +8,15 @@ import br.ufpb.dcx.gui.FabricaWindows;
 
 class TelaProjetoTest {
 
-	@Test
-	void criarTela() {
-		TelaProjeto tela = new TelaProjeto();	
-	}
-	
-	@Test
-	void definirFabrica() {
-		TelaProjeto tela = new TelaProjeto();
-		tela.setFabricaWindows(new FabricaWindows());
-	}
+
 	
 	@Test
 	void desenharTela() {
 		TelaProjeto tela = new TelaProjeto();
-		tela.setFabricaWindows(new FabricaWindows());
+		tela.setFabrica(new FabricaWindows());
 		tela.montar();
 		tela.desenhar();
-		assertEquals("JanelaWindows { MenuWindows, BotaoWindows }" , tela.desenhar());
+		assertEquals("JanelaWindows{MenuWindows,BotaoWindows}" , tela.desenhar());
 	}
 	
 

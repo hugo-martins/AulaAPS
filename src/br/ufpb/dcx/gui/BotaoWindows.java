@@ -4,7 +4,7 @@ public class BotaoWindows implements Botao{
 
 	@Override
 	public String desenhar() {
-		String botao = "Botão Windows";
+		String botao = "BotaoWindows";
 		return botao;
 	}
 

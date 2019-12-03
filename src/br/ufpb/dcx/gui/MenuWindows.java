@@ -4,7 +4,7 @@ public class MenuWindows implements Menu {
 
 	@Override
 	public String desenhar() {
-		String menu = "Menu Windows";
+		String menu = "MenuWindows";
 		return menu;
 	}
 

@@ -4,7 +4,7 @@ public class JanelaWindows implements Janela{
 
 	@Override
 	public String desenhar() {
-		String janela = "Janela Windows";
+		String janela = "JanelaWindows";
 		return janela;
 	}
 

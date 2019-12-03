@@ -1,5 +1,6 @@
 package br.ufpb.dcx.testeabstractfactory;
 
+import br.ufpb.dcx.gui.Botao;
 import br.ufpb.dcx.gui.FabricaAbstrata;
 import br.ufpb.dcx.gui.FabricaAndroid;
 import br.ufpb.dcx.gui.FabricaWindows;
@@ -8,39 +9,35 @@ import br.ufpb.dcx.gui.Menu;
 
 public class TelaProjeto {
 	
-	FabricaAbstrata fabricaWindows = new FabricaWindows();
-	FabricaAbstrata fabricaAndroid = new FabricaAndroid();
+	FabricaAbstrata fabrica;
+	
+	public Janela janela;
+	public Menu menu;
+	public Botao botao;
 	
 
-	public FabricaAbstrata getFabricaWindows() {
-		return fabricaWindows;
-	}
-
-	public void setFabricaWindows(FabricaAbstrata fabricaWindows) {
-		this.fabricaWindows = fabricaWindows;
-	}
-
-	public FabricaAbstrata getFabricaAndroid() {
-		return fabricaAndroid;
-	}
-
-	public void setFabricaAndroid(FabricaAbstrata fabricaAndroid) {
-		this.fabricaAndroid = fabricaAndroid;
-	}
-
-	public String desenhar() {
-		String tela = fabricaWindows.criarJanela() + "{"
-				+ fabricaWindows.criarMenu() + fabricaWindows.criarBotao();
+	public void setFabrica(FabricaAbstrata fabrica) {
+		this.fabrica = fabrica;
 		
-		return tela;
 	}
 
 	public void montar() {
-		this.fabricaWindows.criarJanela();
-		this.fabricaWindows.criarMenu();
-		this.fabricaWindows.criarBotao();
+		janela = this.fabrica.criarJanela();
+		menu = this.fabrica.criarMenu();
+		botao= this.fabrica.criarBotao();
 		
 		
 	}
+	public String desenhar() {
+		
+		
+		return janela.desenhar() + "{"
+				+ menu.desenhar()+ "," + botao.desenhar() + "}";
+	}
+
+	
+
+	
+
 
 }
